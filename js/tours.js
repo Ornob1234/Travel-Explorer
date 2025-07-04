@@ -2,12 +2,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   const container = document.getElementById('toursContainer');
 
   try {
-    const res = await fetch('http://localhost:3000/api/tours');
+    const res = await fetch('/api/tours');
     const tours = await res.json();
 
     container.innerHTML = tours.map(tour => `
       <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden">
-        <img src="http://localhost:3000${tour.image}" alt="${tour.name}" 
+        <img src="${tour.image}" alt="${tour.name}" 
              class="w-full h-48 object-cover"/>
 
         
