@@ -26,12 +26,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 
 
-  document.getElementById('profile-pic').src = `http://localhost:3000/uploads/${user.image}`;
+  document.getElementById('profile-pic').src = `https://travel-explorer-8lpz.onrender.com/uploads/${user.image}`;
   // Load bookings
   async function loadBookings() {
     bookingList.innerHTML = '';
     try {
-      const res = await fetch(`http://localhost:3000/api/bookings/user/${user._id}`);
+      const res = await fetch(`https://travel-explorer-8lpz.onrender.com/api/bookings/user/${user._id}`);
       
       const bookings = await res.json();
       if (bookings.length === 0) {
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
           const id = button.getAttribute('data-id');
           try {
-            const res = await fetch(`http://localhost:3000/api/bookings/${id}`, { method: 'DELETE' });
+            const res = await fetch(`https://travel-explorer-8lpz.onrender.com/api/bookings/${id}`, { method: 'DELETE' });
             if (!res.ok) throw new Error('Failed to cancel');
             alert('Booking canceled.');
             loadBookings();
