@@ -24,7 +24,7 @@ const upload = multer({ storage });
 app.use('/uploads', express.static('uploads')); // ✅ Now safe to use
 
 // Middleware
-app.use(cors());
+app.use(cors({ origin: 'https://travel-explorer-two.vercel.app' }));
 app.use(express.json());
 
 // API Routes
