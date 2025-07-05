@@ -7,7 +7,7 @@ const path = require('path');
 
 // Setup multer for image uploads
 const storage = multer.diskStorage({
-  destination: 'uploads/',
+  destination: 'https://travel-explorer-two.vercel.app/uploads/',
   filename: (req, file, cb) => {
     const ext = path.extname(file.originalname);
     const filename = Date.now() + ext;
