@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/users');
+      const res = await fetch('https://travel-explorer-8lpz.onrender.com/api/users');
       users = await res.json();
       renderUsers();
     } catch (err) {
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const card = document.createElement('div');
       card.className = 'bg-white p-4 rounded shadow';
       card.innerHTML = `
-        <img src="http://localhost:3000/uploads/${u.image}" alt="Profile" class="h-20 w-20 rounded-full mx-auto mb-2 object-cover">
+        <img src="https://travel-explorer-8lpz.onrender.com/uploads/${u.image}" alt="Profile" class="h-20 w-20 rounded-full mx-auto mb-2 object-cover">
         <h3 class="text-center font-semibold">${u.name}</h3>
         <p class="text-center text-sm text-gray-500">${u.email}</p>
         <p class="text-center text-xs text-gray-400">Role: ${u.role || 'user'}</p>
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!confirmDelete) return;
 
         try {
-          const delRes = await fetch(`http://localhost:3000/api/users/${id}`, { method: 'DELETE' });
+          const delRes = await fetch(`https://travel-explorer-8lpz.onrender.com/api/users/${id}`, { method: 'DELETE' });
           if (!delRes.ok) throw new Error('Delete failed');
           alert('User deleted');
           await fetchUsers();
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const fetchBookings = async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/bookings');
+      const res = await fetch('https://travel-explorer-8lpz.onrender.com/api/bookings');
       const bookings = await res.json();
 
       // Separate pending and confirmed bookings
@@ -154,7 +154,7 @@ confirmed.forEach(b => {
         button.addEventListener('click', async () => {
           const id = button.getAttribute('data-id');
           try {
-            const res = await fetch(`http://localhost:3000/api/bookings/${id}/confirm`, { method: 'PATCH' });
+            const res = await fetch(`https://travel-explorer-8lpz.onrender.com/api/bookings/${id}/confirm`, { method: 'PATCH' });
             if (!res.ok) throw new Error('Failed to confirm');
             alert('Booking confirmed');
             fetchBookings();
@@ -169,7 +169,7 @@ confirmed.forEach(b => {
         button.addEventListener('click', async () => {
           const id = button.getAttribute('data-id');
           try {
-            const res = await fetch(`http://localhost:3000/api/bookings/${id}`, { method: 'DELETE' });
+            const res = await fetch(`https://travel-explorer-8lpz.onrender.com/api/bookings/${id}`, { method: 'DELETE' });
             if (!res.ok) throw new Error('Failed to cancel');
             alert('Booking cancelled');
             fetchBookings();
