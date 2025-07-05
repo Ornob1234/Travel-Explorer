@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const formData = new FormData(signupForm);
 
     try {
-      const res = await fetch('https://travel-explorer-8lpz.onrender.com/api/users/signup', {
+      const res = await fetch('/api/users/signup', {
         method: 'POST',
         body: formData
       });
