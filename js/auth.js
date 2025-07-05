@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const formData = new FormData(signupForm);
 
     try {
-      const res = await fetch('http://localhost:3000/api/users/signup', {
+      const res = await fetch('https://travel-explorer-8lpz.onrender.com/api/users/signup', {
         method: 'POST',
         body: formData
       });
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const password = loginForm.querySelector('input[type="password"]').value;
 
     try {
-      const res = await fetch('http://localhost:3000/api/users/login', {
+      const res = await fetch('https://travel-explorer-8lpz.onrender.com/api/users/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
