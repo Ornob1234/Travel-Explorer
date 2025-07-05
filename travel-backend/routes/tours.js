@@ -8,7 +8,8 @@ const Tour = require('../models/Tour');
 // Multer Storage
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    const uploadPath = path.join(__dirname, './public/uploads');
+    app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
+
     fs.mkdirSync(uploadPath, { recursive: true });
     cb(null, uploadPath);
   },
