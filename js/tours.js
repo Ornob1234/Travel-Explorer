@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const container = document.getElementById('toursContainer');
-  const API_BASE = "https://travel-explorer-8lpz.onrender.com/";
+  const API_BASE = "https://travel-explorer-8lpz.onrender.com";
 
   try {
     const res = await fetch('${API_BASE}/api/tours');
