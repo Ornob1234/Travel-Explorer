@@ -247,8 +247,8 @@ form.addEventListener('submit', async (e) => {
 
   try {
     const url = editingTourId
-      ? `http://localhost:3000/api/tours/${editingTourId}`
-      : `http://localhost:3000/api/tours`;
+      ? `https://travel-explorer-8lpz.onrender.com/api/tours/${editingTourId}`
+      : `https://travel-explorer-8lpz.onrender.com/api/tours`;
 
     const method = editingTourId ? 'PUT' : 'POST';
 
@@ -269,7 +269,7 @@ form.addEventListener('submit', async (e) => {
 // Fetch All Tours
 const fetchTours = async () => {
   try {
-    const res = await fetch('http://localhost:3000/api/tours');
+    const res = await fetch('https://travel-explorer-8lpz.onrender.com/api/tours');
     const tours = await res.json();
 
     tourList.innerHTML = '';
@@ -303,7 +303,7 @@ const fetchTours = async () => {
         const id = btn.getAttribute('data-id');
         if (!confirm('Are you sure you want to delete this tour?')) return;
         try {
-          const res = await fetch(`http://localhost:3000/api/tours/${id}`, { method: 'DELETE' });
+          const res = await fetch(`https://travel-explorer-8lpz.onrender.com/api/tours/${id}`, { method: 'DELETE' });
           if (!res.ok) throw new Error('Delete failed');
           await fetchTours();
         } catch (err) {
