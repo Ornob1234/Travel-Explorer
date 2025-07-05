@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Fetch and render tour info
   try {
-    const res = await fetch(`http://localhost:3000/api/tours/${tourId}`);
+    const res = await fetch(`https://travel-explorer-8lpz.onrender.com/api/tours/${tourId}`);
     const tour = await res.json();
 
  tourInfo.innerHTML = `
@@ -52,7 +52,7 @@ if (parseInt(guests) <= 0) {
 
 
     try {
-      const res = await fetch('http://localhost:3000/api/bookings', {
+      const res = await fetch('https://travel-explorer-8lpz.onrender.com/api/bookings', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
