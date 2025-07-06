@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const API_BASE = "https://travel-explorer-8lpz.onrender.com";
 
   try {
-    const res = await fetch('https://travel-explorer-pvjn.onrender.com/api/tours');
+    const res = await fetch('https://travel-explorer-8lpz.onrender.com/api/tours');
     const tours = await res.json();
 
     container.innerHTML = tours.map(tour => `
